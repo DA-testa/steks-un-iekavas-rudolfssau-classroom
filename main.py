@@ -18,7 +18,7 @@ def find_mismatch(text):
             if not openinig_brackets_stack or openinig_brackets_stack[-1].char + next not in ["()", "[]", "{}"]:
                 return i + 1
             openinig_brackets_stack.pop()
-    if openinig_brackets_stack == 0:
+    if not openinig_brackets_stack:
         return "Success"
     return openinig_brackets_stack[-1].position
 
