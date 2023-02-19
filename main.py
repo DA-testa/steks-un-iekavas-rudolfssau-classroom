@@ -1,5 +1,4 @@
-# python3
-
+# 221RDB085 Rudolfs Saukums 12. Grupa
 from collections import namedtuple
 
 Bracket = namedtuple("Bracket", ["char", "position"])
@@ -10,22 +9,26 @@ def are_matching(left, right):
 
 
 def find_mismatch(text):
-    opening_brackets_stack = []
+    openinig_brackets_stack = []
     for i, next in enumerate(text):
         if next in "([{":
-            # Process opening bracket, write your code here
-            pass
+            openinig_brackets_stack.append(Bracket(next, i + 1))
 
         if next in ")]}":
-            # Process closing bracket, write your code here
-            pass
+            if not openinig_brackets_stack or openinig_brackets_stack[-1].char + next not in ["()", "[]", "{}"]:
+                return i + 1
+            openinig_brackets_stack.pop()
+    if openinig_brackets_stack == 0:
+        return "Success"
+    return openinig_brackets_stack[-1].position
 
 
 def main():
     text = input()
     mismatch = find_mismatch(text)
-    # Printing answer, write your code here
+    print(mismatch)
 
 
 if __name__ == "__main__":
     main()
+
