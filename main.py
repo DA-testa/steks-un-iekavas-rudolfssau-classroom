@@ -30,8 +30,8 @@ def main():
         text = input()
         mismatch = find_mismatch(text)
         print(mismatch)
-    else :
-        filePath = input("Location of file")
+    elif main == "F" :
+        filePath = input("Location of file: ")
         with open(filePath, "r") as f:
             text = f.read()
             mismatch = find_mismatch(text)
