@@ -24,14 +24,14 @@ def find_mismatch(text):
 
 
 def main():
-    main = input()
-    if(main == "I"):
+    text = input()
+    if(text[0] == "I"):
         text = input()
-        mismatch = find_mismatch(text)
-        if mismatch == "Success":
-            print("Success")
-        else:
-            print(mismatch)
+    mismatch = find_mismatch(text)
+    if mismatch == "Success":
+        print("Success")
+    else:
+        print(mismatch)
 
 
 if __name__ == "__main__":
