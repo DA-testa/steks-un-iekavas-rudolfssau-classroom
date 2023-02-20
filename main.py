@@ -24,9 +24,19 @@ def find_mismatch(text):
 
 
 def main():
-    text = input()
-    mismatch = find_mismatch(text)
-    print(mismatch)
+    main = input()
+    # mismatch = find_mismatch(text)
+    if main == "I":
+        text = input()
+        mismatch = find_mismatch(text)
+        print(mismatch)
+    else :
+        filePath = input("Location of file")
+        with open(filePath, "r") as f:
+            text = f.read()
+            mismatch = find_mismatch(text)
+            print(mismatch)
+    # print(mismatch)
 
 
 if __name__ == "__main__":
