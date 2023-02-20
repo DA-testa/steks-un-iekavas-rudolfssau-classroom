@@ -25,18 +25,13 @@ def find_mismatch(text):
 
 def main():
     main = input()
-    # mismatch = find_mismatch(text)
-    if main == "I":
+    if(main == "I"):
         text = input()
         mismatch = find_mismatch(text)
-        print(mismatch)
-    elif main == "F" :
-        filePath = input("Location of file: ")
-        with open(filePath, "r") as f:
-            text = f.read()
-            mismatch = find_mismatch(text)
+        if mismatch == "Success":
+            print("Success")
+        else:
             print(mismatch)
-    # print(mismatch)
 
 
 if __name__ == "__main__":
